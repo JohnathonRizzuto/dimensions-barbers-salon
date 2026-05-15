@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dimensions Barbers &amp; Salon — Minooka, IL · Family Cuts &amp; Color</title>
+<meta name="description" content="Dimensions Barbers and Salon at 408 W Mondamin St, Minooka IL. Family haircuts, color, highlights, perms. Walk-ins welcome. (815) 467-4368.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#fafbfc;
+  --surface:#ffffff;
+  --surface-soft:#f1f5f8;
+  --blue:#5b7f95;
+  --blue-deep:#42647a;
+  --blue-soft:#e0ebf2;
+  --coral:#ffb088;
+  --coral-deep:#e88a5b;
+  --ink:#1f2a36;
+  --ink-soft:#5a6878;
+  --line:#dfe6ec;
+  --font-display:'Quicksand',sans-serif;
+  --font-body:'Source Sans 3',sans-serif;
+}
+body{font-family:var(--font-body);background:var(--bg);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased;font-weight:400}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.fade-up{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;transition:background .3s,box-shadow .3s}
+.nav.scrolled{background:rgba(255,255,255,.96);box-shadow:0 2px 18px rgba(31,42,54,.05);backdrop-filter:blur(8px)}
+.brand{font-family:var(--font-display);font-size:1.4rem;color:var(--ink);font-weight:700;letter-spacing:.01em}
+.brand b{color:var(--blue);font-weight:700}
+.nav-links{display:flex;gap:1.8rem;list-style:none}
+.nav-links a{font-size:.84rem;letter-spacing:.04em;font-weight:500;color:var(--ink-soft);transition:color .2s}
+.nav-links a:hover{color:var(--blue)}
+.cta{background:var(--coral);color:var(--ink);padding:11px 22px;font-size:.78rem;font-weight:700;letter-spacing:.02em;transition:background .2s,transform .15s;border:none;cursor:pointer;font-family:var(--font-display);border-radius:50px}
+.cta:hover{background:var(--coral-deep);transform:translateY(-1px)}
+.menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:4px}
+.menu-toggle span{display:block;width:22px;height:2px;background:var(--ink);margin:4px 0}
+
+/* HERO */
+.hero{min-height:96vh;display:flex;align-items:center;text-align:left;position:relative;padding:7rem 2rem 5rem;background:linear-gradient(180deg,var(--blue-soft) 0%,var(--bg) 100%);overflow:hidden}
+.hero::before{content:"";position:absolute;top:25%;right:-200px;width:500px;height:500px;background:var(--coral);border-radius:50%;opacity:.18;z-index:0}
+.hero-inner{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center;width:100%;position:relative;z-index:2}
+.hero-pre{display:inline-flex;align-items:center;gap:.5rem;background:var(--surface);color:var(--blue);padding:8px 16px;font-size:.78rem;font-weight:600;letter-spacing:.02em;border-radius:50px;margin-bottom:1.6rem;border:1px solid var(--line)}
+.hero-pre::before{content:"";display:inline-block;width:6px;height:6px;background:var(--coral);border-radius:50%}
+.hero-title{font-family:var(--font-display);font-size:clamp(2.6rem,7vw,5rem);line-height:1.05;letter-spacing:-.02em;color:var(--ink);margin-bottom:1.4rem;font-weight:700}
+.hero-title em{font-style:normal;color:var(--blue)}
+.hero-sub{font-size:1.06rem;color:var(--ink-soft);line-height:1.75;max-width:480px;margin-bottom:2.2rem;font-weight:400}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:var(--surface);padding:14px 30px;font-size:.86rem;font-weight:600;border-radius:50px;transition:all .2s;border:none;cursor:pointer;font-family:var(--font-display)}
+.btn-primary:hover{background:var(--blue-deep);transform:translateY(-2px)}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--ink);color:var(--ink);padding:12.5px 28px;font-size:.86rem;font-weight:600;border-radius:50px;transition:all .2s;background:transparent;font-family:var(--font-display)}
+.btn-outline:hover{background:var(--ink);color:var(--surface)}
+.hero-img{position:relative;aspect-ratio:5/6;border-radius:24px;overflow:hidden;box-shadow:0 20px 60px rgba(91,127,149,.25)}
+.hero-img img{width:100%;height:100%;object-fit:cover}
+.hero-img::after{content:"";position:absolute;bottom:1rem;right:1rem;width:80px;height:80px;background:var(--coral);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:.78rem;font-weight:700;color:var(--ink);text-align:center;line-height:1.1}
+.hero-img-bubble{position:absolute;bottom:1.3rem;right:1.3rem;width:80px;height:80px;background:var(--coral);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:.7rem;font-weight:700;color:var(--ink);text-align:center;line-height:1.15;padding:.4rem;z-index:2}
+
+/* STATS */
+.stats{background:var(--surface);padding:2rem;display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stat{text-align:center}
+.stat-num{font-family:var(--font-display);font-size:2.2rem;color:var(--blue);font-weight:700;display:block;line-height:1}
+.stat-label{font-size:.74rem;color:var(--ink-soft);font-weight:500;margin-top:.4rem;display:block}
+
+/* SECTION */
+.sec{padding:6rem 2rem}
+.sec-inner{max-width:1080px;margin:0 auto}
+.sec-pre{font-size:.76rem;color:var(--coral-deep);font-weight:700;margin-bottom:.8rem;letter-spacing:.02em}
+.sec-title{font-family:var(--font-display);font-size:clamp(2.2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-.02em;margin-bottom:1.4rem;color:var(--ink);font-weight:700}
+.sec-title em{font-style:normal;color:var(--blue)}
+.sec-desc{color:var(--ink-soft);font-size:1.02rem;line-height:1.8;max-width:600px}
+.sec-center{text-align:center}
+.sec-center .sec-desc{margin:0 auto 3rem}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:4rem;align-items:center}
+.about-img{position:relative;aspect-ratio:4/5;border-radius:24px;overflow:hidden;box-shadow:0 16px 50px rgba(31,42,54,.08)}
+.about-img img{width:100%;height:100%;object-fit:cover}
+.about-quote{font-family:var(--font-display);font-size:1.4rem;color:var(--blue);background:var(--blue-soft);padding:1.4rem 1.6rem;border-radius:18px;margin-top:1.8rem;line-height:1.4;font-weight:600;font-style:italic}
+
+/* SERVICES */
+.services-bg{background:var(--surface-soft)}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.4rem;margin-top:2rem}
+.svc-card{background:var(--surface);border-radius:20px;padding:2rem 1.7rem;transition:transform .2s,box-shadow .2s;border:1px solid var(--line)}
+.svc-card:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(91,127,149,.12)}
+.svc-icon{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;background:var(--blue-soft);color:var(--blue);border-radius:14px;font-size:1.4rem;margin-bottom:1rem}
+.svc-name{font-family:var(--font-display);font-size:1.35rem;margin-bottom:.4rem;color:var(--ink);font-weight:700}
+.svc-desc{font-size:.92rem;color:var(--ink-soft);line-height:1.65}
+.svc-price{font-family:var(--font-display);font-size:1.05rem;color:var(--coral-deep);margin-top:.9rem;display:inline-block;font-weight:700}
+
+/* TESTI */
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.4rem;margin-top:2rem}
+.testi-card{background:var(--surface);padding:2rem 1.7rem;border-radius:20px;border:1px solid var(--line);position:relative}
+.testi-card::before{content:"";position:absolute;top:1.4rem;left:1.7rem;width:30px;height:3px;background:var(--coral);border-radius:3px}
+.testi-text{color:var(--ink);font-size:.97rem;line-height:1.7;margin:1.4rem 0 1rem;font-weight:400}
+.testi-author{font-size:.84rem;color:var(--blue);font-weight:600}
+
+/* CONTACT */
+.contact{background:var(--blue);color:var(--surface);text-align:center}
+.contact .sec-pre{color:var(--coral)}
+.contact .sec-title{color:var(--surface)}
+.contact .sec-title em{color:var(--coral)}
+.contact .sec-desc{color:#c7d4dc}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;max-width:920px;margin:2.5rem auto 0}
+.ci{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:1.6rem 1.4rem;text-align:left;backdrop-filter:blur(8px)}
+.ci-icon{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:var(--coral);color:var(--ink);border-radius:10px;font-size:1.1rem;margin-bottom:.6rem}
+.ci-label{font-size:.72rem;color:#c7d4dc;font-weight:500;margin-bottom:.3rem}
+.ci-value{font-size:.95rem;color:var(--surface);line-height:1.55;font-weight:500}
+.ci-value a{color:var(--coral)}
+.map-wrap{margin-top:3rem;max-width:920px;margin-left:auto;margin-right:auto;height:320px;border-radius:18px;overflow:hidden;border:3px solid var(--coral)}
+.map-wrap iframe{width:100%;height:100%;border:0}
+
+/* FOOTER */
+.footer{background:var(--surface);color:var(--ink);padding:3rem 2rem;text-align:center;border-top:1px solid var(--line)}
+.f-brand{font-family:var(--font-display);font-size:1.55rem;margin-bottom:.5rem;font-weight:700}
+.f-brand b{color:var(--blue)}
+.f-tag{color:var(--ink-soft);font-size:.88rem;margin-bottom:1rem}
+.f-copy{font-size:.78rem;color:var(--ink-soft);opacity:.7}
+
+@media(max-width:860px){
+  .nav-links{display:none}
+  .cta{display:none}
+  .menu-toggle{display:block}
+  .nav-links.open{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--surface);padding:1.5rem 2rem;gap:1.2rem;box-shadow:0 4px 20px rgba(31,42,54,.08)}
+  .hero{padding:6rem 1.4rem 3rem;min-height:auto}
+  .hero-inner{grid-template-columns:1fr;gap:2.5rem}
+  .about-grid{grid-template-columns:1fr;gap:3rem}
+  .stats{gap:1.4rem;padding:1.4rem 1rem}
+  .sec{padding:4rem 1.2rem}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="#" class="brand">Dimensions <b>·</b> Barbers &amp; Salon</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#visit">Visit</a></li>
+  </ul>
+  <a href="tel:+18154674368" class="cta">Book a Chair</a>
+  <button class="menu-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <span class="hero-pre fade-up">Minooka · Family Owned</span>
+      <h1 class="hero-title fade-up d1">Hair, Color &amp;<br><em>Family Cuts.</em><br>All Under One Roof.</h1>
+      <p class="hero-sub fade-up d2">Dimensions Barbers &amp; Salon has been Minooka's full-service hair stop on West Mondamin Street. Family haircuts, color, highlights, perms, and updos — for everyone in the household.</p>
+      <div class="hero-btns fade-up d3">
+        <a href="tel:+18154674368" class="btn-primary">Call (815) 467-4368</a>
+        <a href="#services" class="btn-outline">See Services</a>
+      </div>
+    </div>
+    <div class="hero-img fade-up d2">
+      <!-- REPLACE WITH REAL PHOTO -->
+      <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=800&q=80" alt="Dimensions Barbers and Salon">
+      <div class="hero-img-bubble">Walk-Ins<br>Welcome</div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat fade-up"><span class="stat-num">40+</span><span class="stat-label">Reviews on Birdeye</span></div>
+  <div class="stat fade-up d1"><span class="stat-num">★ 5.0</span><span class="stat-label">Local Favorite</span></div>
+  <div class="stat fade-up d2"><span class="stat-num">All</span><span class="stat-label">Ages Welcome</span></div>
+  <div class="stat fade-up d3"><span class="stat-num">Cut &amp;<br>Color</span><span class="stat-label">Full Service</span></div>
+</div>
+
+<!-- ABOUT -->
+<section class="sec" id="about">
+  <div class="sec-inner about-grid">
+    <div class="about-img fade-up">
+      <!-- REPLACE WITH REAL PHOTO -->
+      <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=800&q=80" alt="Inside Dimensions">
+    </div>
+    <div>
+      <div class="sec-pre fade-up">Our Story</div>
+      <h2 class="sec-title fade-up d1">A Salon &amp; <em>Barber</em><br>For Everyone.</h2>
+      <p class="sec-desc fade-up d2">Dimensions Barbers &amp; Salon has been the neighborhood hair stop in Minooka for years. We cut, color, style, and trim for everyone in the family — dads and kids in for a fade, moms in for a foil, grandparents in for their regular trim.</p>
+      <p class="sec-desc fade-up d3" style="margin-top:1rem">It's a single chair philosophy: take the time, talk to the client, deliver a result you can stand behind. That's what's kept Minooka coming back.</p>
+      <div class="about-quote fade-up d4">"One shop. Every family. Every chair."</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="sec services-bg" id="services">
+  <div class="sec-inner">
+    <div class="sec-center">
+      <div class="sec-pre fade-up">What We Offer</div>
+      <h2 class="sec-title fade-up d1">Services for <em>Everyone.</em></h2>
+      <p class="sec-desc fade-up d2">Walk-ins welcome. Call ahead for color or chemical services — they take time.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card fade-up"><div class="svc-icon">✂️</div><h3 class="svc-name">Family Haircuts</h3><p class="svc-desc">Men, women, kids — every member of the household.</p><span class="svc-price">Call for pricing</span></div>
+      <div class="svc-card fade-up d1"><div class="svc-icon">🎨</div><h3 class="svc-name">Color &amp; Highlights</h3><p class="svc-desc">Single process, foils, balayage — full color services.</p><span class="svc-price">Call for pricing</span></div>
+      <div class="svc-card fade-up d2"><div class="svc-icon">🌀</div><h3 class="svc-name">Perms</h3><p class="svc-desc">Classic permanent waves for lasting body and curl.</p><span class="svc-price">Call for pricing</span></div>
+      <div class="svc-card fade-up"><div class="svc-icon">💍</div><h3 class="svc-name">Updos</h3><p class="svc-desc">Special occasion styling — weddings, proms, events.</p><span class="svc-price">Call for pricing</span></div>
+      <div class="svc-card fade-up d1"><div class="svc-icon">🪒</div><h3 class="svc-name">Men's Barbering</h3><p class="svc-desc">Fades, tapers, beard trims, lineups.</p><span class="svc-price">Call for pricing</span></div>
+      <div class="svc-card fade-up d2"><div class="svc-icon">👦</div><h3 class="svc-name">Kids Cuts</h3><p class="svc-desc">First cuts and friendly faces — bring the whole crew.</p><span class="svc-price">Call for pricing</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="sec" id="reviews">
+  <div class="sec-inner">
+    <div class="sec-center">
+      <div class="sec-pre fade-up">Reviews</div>
+      <h2 class="sec-title fade-up d1">What Minooka <em>Says.</em></h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card fade-up"><p class="testi-text">My whole family goes to Dimensions — me, my husband, our two boys. They handle everything from kid cuts to my highlights and we all come out happy.</p><span class="testi-author">Minooka Mom</span></div>
+      <div class="testi-card fade-up d1"><p class="testi-text">Honest pricing, warm shop, and the color is always exactly what I asked for. Couldn't ask for more.</p><span class="testi-author">Regular Client</span></div>
+      <div class="testi-card fade-up d2"><p class="testi-text">Friendly, professional, and they take the time to listen. The kind of neighborhood salon that's hard to find anymore.</p><span class="testi-author">Local Family</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec contact" id="visit">
+  <div class="sec-inner">
+    <div class="sec-center">
+      <div class="sec-pre fade-up">Visit</div>
+      <h2 class="sec-title fade-up d1">Stop In &amp; <em>Say Hi.</em></h2>
+      <p class="sec-desc fade-up d2" style="margin:0 auto;max-width:520px">West Mondamin Street, Minooka. Walk-ins always welcome.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="ci fade-up"><div class="ci-icon">📍</div><div class="ci-label">Address</div><div class="ci-value">408 W Mondamin St #2<br>Minooka, IL 60447</div></div>
+      <div class="ci fade-up d1"><div class="ci-icon">📞</div><div class="ci-label">Phone</div><div class="ci-value"><a href="tel:+18154674368">(815) 467-4368</a></div></div>
+      <div class="ci fade-up d2"><div class="ci-icon">🕐</div><div class="ci-label">Hours</div><div class="ci-value" style="font-size:.86rem;font-weight:400">Tue-Wed 9am-6pm<br>Thu 10am-7pm<br>Fri 9am-6pm<br>Sat 9am-2pm<br>Mon/Sun Closed</div></div>
+      <div class="ci fade-up d3"><div class="ci-icon">💳</div><div class="ci-label">Payment</div><div class="ci-value" style="font-size:.88rem;font-weight:400">Cash &amp; cards<br>Family-friendly</div></div>
+    </div>
+    <div class="map-wrap fade-up"><iframe src="https://www.google.com/maps?q=408+W+Mondamin+St,+Minooka,+IL+60447&output=embed" allowfullscreen loading="lazy"></iframe></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="f-brand">Dimensions <b>·</b> Barbers &amp; Salon</div>
+  <div class="f-tag">Minooka's Family Hair Stop · 408 W Mondamin St</div>
+  <div class="f-copy">© 2026 Dimensions Barbers &amp; Salon · Minooka, IL</div>
+</footer>
+
+<script>
+var nav=document.getElementById('nav');
+window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>40)});
+document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var h=this.getAttribute('href');if(h==='#')return;var t=document.querySelector(h);if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});document.getElementById('navLinks').classList.remove('open')}})});
+var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fade-up').forEach(function(el){o.observe(el)});
+</script>
+
+</body>
+</html>
