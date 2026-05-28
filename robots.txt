@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dimensions-barbers-salon.vercel.app/sitemap.xml
